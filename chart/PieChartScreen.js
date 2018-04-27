@@ -82,7 +82,7 @@ class PieChartScreen extends React.Component {
 
             entryLabelColor={processColor('black')}
             entryLabelTextSize={20}
-            drawEntryLabels={true}
+            drawEntryLabels={false}
 
             rotationEnabled={true}
             rotationAngle={45}

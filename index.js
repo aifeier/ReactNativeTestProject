@@ -20,7 +20,8 @@ import CountApp from './CountApp'
 import ARTTest from './base/ARTTest'
 import NativeProps from './base/NativeProps'
 import ChartExample from './chart/ChartExample'
-
+import PieChartScreen from './chart/PieChartScreen';
+import MyPieChart from './chart/MyPieChart';
 const MainApp = StackNavigator({
     App: {screen: App},
     StylesTest: {screen: StylesTest},
@@ -37,11 +38,13 @@ const MainApp = StackNavigator({
     Picker: {screen: Picker},
     Switch: {screen: Switch},
     ARTTest: {screen: ARTTest},
+    ChartExample: {screen: ChartExample},
 })
 
 
-AppRegistry.registerComponent('MainApp', () => MainApp);
-// AppRegistry.registerComponent('MainApp', () => CountApp);
+// AppRegistry.registerComponent('MainApp', () => MainApp);
+// AppRegistry.registerComponent('MainApp', () => ChartExample);
+AppRegistry.registerComponent('MainApp', () => CountApp);
 // AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);
 AppRegistry.registerComponent('App', () => App);
