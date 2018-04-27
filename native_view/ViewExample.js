@@ -4,7 +4,7 @@ import {
 import {
     requireNativeComponent, View
 } from 'react-native'
-
+/*使用原生Android自定义View*/
 var iface = {
     name: 'ViewExample',
     propTypes: {

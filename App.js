@@ -4,8 +4,8 @@
  * @flow
  */
 
-import React from 'react';
-import {Button, Platform, ScrollView, StyleSheet} from 'react-native';
+import React, {Component} from 'react';
+import {Button, Platform, ScrollView, StyleSheet, FlatList, Text, View} from 'react-native';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' +
@@ -24,6 +24,86 @@ type Props = {};
 export default class App extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
+    }
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: [
+                {
+                    key: 'StylesTest',
+                    title: 'Go to StylesTest',
+                    sourceClass: 'StylesTest',
+                },
+                {
+                    key: 'TextInputTest',
+                    title: 'Go to TextInputTest',
+                    sourceClass: 'TextInputTest',
+                },
+                {
+                    key: 'FlexBox',
+                    title: 'Go to FlexBox',
+                    sourceClass: 'FlexBox',
+                },
+                {
+                    key: 'ScrollViewTest',
+                    title: 'Go to ScrollViewTest',
+                    sourceClass: 'ScrollViewTest',
+                },
+                {
+                    key: 'selfProps',
+                    title: 'Go to selfProps',
+                    sourceClass: 'selfProps',
+                },
+                {
+                    key: 'StateTest',
+                    title: 'Go to StateTest',
+                    sourceClass: 'StateTest',
+                },
+                {
+                    key: 'FixedDimensionsBasics',
+                    title: 'Go to FixedDimensionsBasics',
+                    sourceClass: 'FixedDimensionsBasics',
+                },
+                {
+                    key: 'FetchTest',
+                    title: 'Go to FetchTest',
+                    sourceClass: 'FetchTest',
+                },
+                {
+                    key: 'WebSocketTest',
+                    title: 'Go to WebSocketTest',
+                    sourceClass: 'WebSocketTest',
+                },
+                {
+                    key: 'FlatListTest',
+                    title: 'Go to FlatListTest',
+                    sourceClass: 'FlatListTest',
+                },
+                {
+                    key: 'Picker',
+                    title: 'Go to Picker',
+                    sourceClass: 'Picker',
+                },
+                {
+                    key: 'Switch',
+                    title: 'Go to Switch',
+                    sourceClass: 'Switch',
+                },
+                {
+                    key: 'ARTTest',
+                    title: 'Go to ARTTest',
+                    sourceClass: 'ARTTest',
+                },
+                {
+                    key: 'ChartExample',
+                    title: 'Go to ChartExample',
+                    sourceClass: 'ChartExample',
+                },
+
+            ],
+
+        }
     }
 
     render() {
@@ -69,62 +149,32 @@ export default class App extends React.Component {
         //         //此处为失败之后回调的信息
         //         alert(err);
         //     });
-        return (
-            <ScrollView>
-                <ViewExample numberSize={15} style={{width: 200, height: 30}}/>
-                {/*<Button*/}
-                {/*title='Go to App'*/}
-                {/*onPress={() => navigate('App', {name: 'aa'})}/>*/}
 
-                <Button
-                    title='Go to StylesTest'
-                    onPress={() => navigate('StylesTest')}/>
-                <Button
-                    title='Go to TextInputTest'
-                    onPress={() => navigate('TextInputTest')}/>
-                <Button
-                    title='Go to FlexBox'
-                    onPress={() => navigate('FlexBox')}/>
-                <Button
-                    title='Go to ScrollViewTest'
-                    onPress={() => navigate('ScrollViewTest')}/>
-                <Button
-                    title='Go to helloWorldApp'
-                    onPress={() => navigate('helloWorldApp')}/>
-                <Button
-                    title='Go to selfProps'
-                    onPress={() => navigate('selfProps')}/>
-                <Button
-                    title='Go to StateTest'
-                    onPress={() => navigate('StateTest')}/>
-                <Button style={styles.hasBottom}
-                        title='Go to FixedDimensionsBasics'
-                        onPress={() => navigate('FixedDimensionsBasics')}/>
-                <Button style={styles.hasBottom}
-                        title='Go to FetchTest'
-                        onPress={() => navigate('FetchTest')}/>
-                <Button style={{marginTop: 20}}
-                        title='Go to WebSocketTest'
-                        onPress={() => navigate('WebSocketTest')}/>
-                <Button style={styles.hasBottom}
-                        title='Go to FlatListTest'
-                        onPress={() => navigate('FlatListTest')}/>
-                <Button
-                    title='Go to Picker'
-                    onPress={() => navigate('Picker')}/>
-                <Button
-                    title='Go to Switch'
-                    onPress={() => navigate('Switch')}/>
-                <Button
-                    title='Go to ARTTest'
-                    onPress={() => navigate('ARTTest')}/>
-                <Button
-                    title='Go to ChartExample'
-                    onPress={() => navigate('ChartExample')}/>
+        //把data中数组的下标作为了唯一的key
+        _keyExtractor = (item, index) => index;
+        return (
+            <ScrollView style={{backgroundColor: '#fff'}}>
+                <ViewExample numberSize={15} style={{width: 200, height: 30}}/>
+                <FlatList
+                    data={this.state.data}
+                    ItemSeparatorComponent={ItemDivideComponent}
+                    keyExtractor = {this._keyExtractor}
+                    // extraData={this.state}
+                    renderItem={({item}) => <Text style={{textAlign: 'center', padding: 5}}
+                                                  onPress={() => navigate(item.sourceClass)}>{item.title}</Text>}
+                />
             </ScrollView>
         )
     }
 }
+
+class ItemDivideComponent extends Component {
+    render() {
+        return (
+            <View style={{height: 1, backgroundColor: '#f9f9f9'}}/>
+        );
+    }
+};
 
 const styles = StyleSheet.create({
     hasBottom: {
