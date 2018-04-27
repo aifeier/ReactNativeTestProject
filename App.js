@@ -18,6 +18,7 @@ import CallBackExample from './native_modules/CallBackExample'
 import ImagePickerModule from './native_modules/ImagePickerModule';
 import ViewExample from './native_view/ViewExample'
 import ARTTest from "./base/ARTTest";
+import ChartExample from "./chart/ChartExample";
 
 type Props = {};
 export default class App extends React.Component {
@@ -117,6 +118,9 @@ export default class App extends React.Component {
                 <Button
                     title='Go to ARTTest'
                     onPress={() => navigate('ARTTest')}/>
+                <Button
+                    title='Go to ChartExample'
+                    onPress={() => navigate('ChartExample')}/>
             </ScrollView>
         )
     }
