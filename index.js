@@ -17,6 +17,7 @@ import MainScreen from './base/ReactNavigationTest'
 import Picker from './widget/Picker'
 import Switch from './widget/Switch'
 import CountApp from './CountApp'
+import CountAppSource from './CountAppSource'
 import ARTTest from './base/ARTTest'
 import NativeProps from './base/NativeProps'
 import ChartExample from './chart/ChartExample'
@@ -42,9 +43,9 @@ const MainApp = StackNavigator({
 })
 
 
-// AppRegistry.registerComponent('MainApp', () => MainApp);
+AppRegistry.registerComponent('MainApp', () => MainApp);
 // AppRegistry.registerComponent('MainApp', () => ChartExample);
-AppRegistry.registerComponent('MainApp', () => CountApp);
+// AppRegistry.registerComponent('MainApp', () => CountAppSource);
 // AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);
 AppRegistry.registerComponent('App', () => App);
@@ -62,3 +63,4 @@ AppRegistry.registerComponent('FetchTest', () => FetchTest);
 AppRegistry.registerComponent('WebSocketTest', () => WebSocketTest);
 AppRegistry.registerComponent('FlatListTest', () => FlatListTest);
 AppRegistry.registerComponent('ChartExample', () => ChartExample);
+AppRegistry.registerComponent('CountAppSource', () => CountAppSource);
