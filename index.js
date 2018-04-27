@@ -16,6 +16,8 @@ import WebSocketTest from './base/WebSocketTest'
 import MainScreen from './base/ReactNavigationTest'
 import Picker from './widget/Picker'
 import Switch from './widget/Switch'
+import CountApp from './CountApp'
+import ARTTest from './base/ARTTest'
 import NativeProps from './base/NativeProps'
 
 const MainApp = StackNavigator({
@@ -33,10 +35,13 @@ const MainApp = StackNavigator({
     FlatListTest: {screen: FlatListTest},
     Picker: {screen: Picker},
     Switch: {screen: Switch},
+    ARTTest: {screen: ARTTest},
 })
 
 
-AppRegistry.registerComponent('MainApp', () => MainApp);
+// AppRegistry.registerComponent('MainApp', () => MainApp);
+AppRegistry.registerComponent('MainApp', () => CountApp);
+// AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);
 AppRegistry.registerComponent('App', () => App);
 AppRegistry.registerComponent('MainScreen', () => MainScreen);

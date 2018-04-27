@@ -17,6 +17,8 @@ import ToastExample from './native_modules/ToastExample'
 import CallBackExample from './native_modules/CallBackExample'
 import ImagePickerModule from './native_modules/ImagePickerModule';
 import ViewExample from './native_view/ViewExample'
+import ARTTest from "./base/ARTTest";
+
 type Props = {};
 export default class App extends React.Component {
     static navigationOptions = {
@@ -55,6 +57,7 @@ export default class App extends React.Component {
                 console.error(e);
             }
         }
+
         measureLayout();
         // ImagePickerModule.pickImage()
         //     .then((msg) => {
@@ -67,10 +70,10 @@ export default class App extends React.Component {
         //     });
         return (
             <ScrollView>
-                <ViewExample numberSize={15} style={{width:200,height:30}}/>
+                <ViewExample numberSize={15} style={{width: 200, height: 30}}/>
                 {/*<Button*/}
-                    {/*title='Go to App'*/}
-                    {/*onPress={() => navigate('App', {name: 'aa'})}/>*/}
+                {/*title='Go to App'*/}
+                {/*onPress={() => navigate('App', {name: 'aa'})}/>*/}
 
                 <Button
                     title='Go to StylesTest'
@@ -106,11 +109,14 @@ export default class App extends React.Component {
                         title='Go to FlatListTest'
                         onPress={() => navigate('FlatListTest')}/>
                 <Button
-                        title='Go to Picker'
-                        onPress={() => navigate('Picker')}/>
+                    title='Go to Picker'
+                    onPress={() => navigate('Picker')}/>
                 <Button
                     title='Go to Switch'
                     onPress={() => navigate('Switch')}/>
+                <Button
+                    title='Go to ARTTest'
+                    onPress={() => navigate('ARTTest')}/>
             </ScrollView>
         )
     }
