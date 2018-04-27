@@ -43,9 +43,8 @@ const MainApp = StackNavigator({
 })
 
 
-AppRegistry.registerComponent('MainApp', () => MainApp);
-// AppRegistry.registerComponent('MainApp', () => ChartExample);
-// AppRegistry.registerComponent('MainApp', () => CountAppSource);
+// AppRegistry.registerComponent('MainApp', () => MainApp);
+AppRegistry.registerComponent('MainApp', () => CountAppSource);
 // AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);
 AppRegistry.registerComponent('App', () => App);
