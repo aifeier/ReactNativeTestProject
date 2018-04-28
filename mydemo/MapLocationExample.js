@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {StyleSheet, ToastAndroid, View} from 'react-native'
 import {MapView} from 'react-native-amap3d'
 
-import PropTypes from 'prop-types'
 
 export default class MapLocationExample extends Component {
     static navigationOptions = {
@@ -30,16 +29,17 @@ export default class MapLocationExample extends Component {
     }
 
     _onLocation = ({nativeEvent}) => this._log('onLocation', nativeEvent)
+
     render() {
         return (
             <View style={{flex: 1}}>
                 <MapView style={{flex: 1}}
-                         locationStyle={{
-                             image:'point',
+                         locationStyle={({
+                             // image: 'point',
                              // fillColor: '#ff0000',
                              // strokeColor: '#00ff00',
-                             strokeWidth:20,
-                         }}
+                             strokeWidth: 20,
+                         })}
                          zoomLevel={this.state.zoomLevel}
                          coordinate={this.state.coordinate}
                          locationEnabled={true}
@@ -57,6 +57,7 @@ export default class MapLocationExample extends Component {
         )
     }
 }
+
 
 class MyCircle extends Component {
     render() {
