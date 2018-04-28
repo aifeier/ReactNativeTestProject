@@ -16,7 +16,7 @@ const {Surface, Group} = ART
 //https://github.com/wuxudong/react-native-charts-wrapper
 import {PieChart} from 'react-native-charts-wrapper';
 
-//
+//https://github.com/skv-headless/react-native-scrollable-tab-view
 import ScrollableTabView, {ScrollableTabBar, DefaultTabBar} from 'react-native-scrollable-tab-view';
 
 /*统计界面
