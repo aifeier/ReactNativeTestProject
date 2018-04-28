@@ -1,31 +1,17 @@
-import React, {
-    Component
-} from 'react'
-import {
-    StyleSheet,
-    View,
-    Text,
-    ART, processColor, ScrollView, Dimensions, Button
-}
-    from
-        'react-native'
-import MainScreen from './base/ScrollViewTest'
-
-const {Surface, Group} = ART
-
+import React, {Component} from 'react'
+import {processColor, ScrollView, StyleSheet, Text, View} from 'react-native'
 //https://github.com/wuxudong/react-native-charts-wrapper
 import {PieChart} from 'react-native-charts-wrapper';
-
 //https://github.com/skv-headless/react-native-scrollable-tab-view
-import ScrollableTabView, {ScrollableTabBar, DefaultTabBar} from 'react-native-scrollable-tab-view';
+import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 
 /*统计界面
 * 2.0版本 第三方库绘制
 * */
+
+
 class CountApp extends Component {
-    static navigationOptions = {
-        title: '统计',
-    }
+
 
     constructor(props) {
         super(props)
@@ -131,13 +117,17 @@ class CountApp extends Component {
     }
 }
 
+
 export default class CountAppSource extends Component {
+    static navigationOptions = {
+        title: '统计',
+    }
+
     constructor() {
         super()
         this.state = {
             titleStr: ['今天', '本周', '本月', '今年'],
         }
-
     }
 
 

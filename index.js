@@ -23,7 +23,9 @@ import NativeProps from './base/NativeProps'
 import ChartExample from './chart/ChartExample'
 import PieChartScreen from './chart/PieChartScreen';
 import MyPieChart from './chart/MyPieChart';
+
 const MainApp = StackNavigator({
+    // CountAppSource: {screen: CountAppSource},
     App: {screen: App},
     StylesTest: {screen: StylesTest},
     TextInputTest: {screen: TextInputTest},
@@ -43,8 +45,8 @@ const MainApp = StackNavigator({
 })
 
 
-// AppRegistry.registerComponent('MainApp', () => MainApp);
-AppRegistry.registerComponent('MainApp', () => CountAppSource);
+AppRegistry.registerComponent('MainApp', () => MainApp);
+// AppRegistry.registerComponent('MainApp', () => CountAppSource);
 // AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);
 AppRegistry.registerComponent('App', () => App);
