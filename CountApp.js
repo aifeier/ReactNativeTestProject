@@ -37,34 +37,40 @@ export default class CountApp extends Component {
             currentSumList: [3, 4, 10, 20],
             date: date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + weekday[date.getDay()]
         }
+        this._onTitleCheck=this.onTitleCheck.bind(this,1)
 
     }
 
-    render() {
-        function onTitleCheck(that, position) {
-            that.setState({
-                tabPosition: position,
-            })
-        }
+    onTitleCheck(position, e) {
+        this.setState({
+            tabPosition: position,
+        })
+    }
 
+    render() {
         return (
             <View style={styles.container}>
                 <View style={styles.tabTitle}>
                     <Text
-                        onPress={() => onTitleCheck(this, 1)}
+                        //使用this
+                        onPress={this.onTitleCheck.bind(this, 1)}
+                        //使用（）
+                        onPress={() => this.onTitleCheck(1)}
+                        //初始化时绑定，只会生成一个实例方法
+                        onPress={this._onTitleCheck}
                         style={[this.state.tabPosition == 1 ? styles.tabItemSelected : styles.tabItem, {
                             borderBottomLeftRadius: 2,
                             borderTopLeftRadius: 2,
                             borderLeftWidth: 1,
                         }]}>{this.state.titleStr[0]}</Text>
                     <Text
-                        onPress={() => onTitleCheck(this, 2)}
+                        onPress={this.onTitleCheck.bind(this, 2)}
                         style={[this.state.tabPosition == 2 ? styles.tabItemSelected : styles.tabItem]}>{this.state.titleStr[1]}</Text>
                     <Text
-                        onPress={() => onTitleCheck(this, 3)}
+                        onPress={this.onTitleCheck.bind(this, 3)}
                         style={[this.state.tabPosition == 3 ? styles.tabItemSelected : styles.tabItem]}>{this.state.titleStr[2]}</Text>
                     <Text
-                        onPress={() => onTitleCheck(this, 4)}
+                        onPress={this.onTitleCheck.bind(this, 4)}
                         style={[this.state.tabPosition == 4 ? styles.tabItemSelected : styles.tabItem, {
                             borderBottomRightRadius: 2,
                             borderTopRightRadius: 2,
