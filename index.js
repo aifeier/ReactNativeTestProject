@@ -23,10 +23,12 @@ import NativeProps from './base/NativeProps'
 import ChartExample from './chart/ChartExample'
 import PieChartScreen from './chart/PieChartScreen';
 import MyPieChart from './chart/MyPieChart';
+import aamp3d from './aamp3d/index'
 
 const MainApp = StackNavigator({
     // CountAppSource: {screen: CountAppSource},
     App: {screen: App},
+    aamp3d: {screen: aamp3d},
     StylesTest: {screen: StylesTest},
     TextInputTest: {screen: TextInputTest},
     FlexBox: {screen: FlexBox},
@@ -46,6 +48,7 @@ const MainApp = StackNavigator({
 
 
 AppRegistry.registerComponent('MainApp', () => MainApp);
+// AppRegistry.registerComponent('MainApp', () => aamp3d);
 // AppRegistry.registerComponent('MainApp', () => CountAppSource);
 // AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);

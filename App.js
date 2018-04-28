@@ -36,6 +36,11 @@ export default class App extends React.Component {
                     sourceClass: 'StylesTest',
                 },
                 {
+                    key: 'aamp3d',
+                    title: 'Go to aamp3d',
+                    sourceClass: 'aamp3d',
+                },
+                {
                     key: 'TextInputTest',
                     title: 'Go to TextInputTest',
                     sourceClass: 'TextInputTest',
