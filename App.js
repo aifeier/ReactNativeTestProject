@@ -41,6 +41,11 @@ export default class App extends React.Component {
                     sourceClass: 'MapLocationExample',
                 },
                 {
+                    key: 'CountAppSource',
+                    title: 'Go to CountAppSource',
+                    sourceClass: 'CountAppSource',
+                },
+                {
                     key: 'aamp3d',
                     title: 'Go to aamp3d',
                     sourceClass: 'aamp3d',
@@ -149,7 +154,7 @@ export default class App extends React.Component {
             }
         }
 
-        measureLayout();
+        // measureLayout();
         // ImagePickerModule.pickImage()
         //     .then((msg) => {
         //         //此处为成功之后回调的信息（指的是：uri.toString() 的值 ）

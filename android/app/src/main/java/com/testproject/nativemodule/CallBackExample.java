@@ -1,5 +1,11 @@
 package com.testproject.nativemodule;
 
+import android.util.Log;
+
+import com.amap.api.maps.MapView;
+import com.amap.api.maps.model.Circle;
+import com.amap.api.maps.model.CircleOptions;
+import com.amap.api.maps.model.LatLng;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
@@ -33,6 +39,10 @@ public class CallBackExample extends ReactContextBaseJavaModule {
             float relativeY = PixelUtil.toDIPFromPixel(mMeasureBuffer[1]);
             float width = PixelUtil.toDIPFromPixel(mMeasureBuffer[2]);
             float height = PixelUtil.toDIPFromPixel(mMeasureBuffer[3]);
+            Circle circle = new MapView(getReactApplicationContext()).getMap().addCircle(
+                    new CircleOptions().center(new LatLng(30.278975, 120.145913)).radius(100)
+            );
+            Log.e("measureLayout", "是否包含：" + circle.contains(new LatLng(30.271911, 120.145913)));
             successCallback.invoke(relativeX, relativeY, width, height);
         } catch (IllegalViewOperationException e) {
             errorCallback.invoke(e.getMessage());

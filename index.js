@@ -27,7 +27,6 @@ import aamp3d from './aamp3d/index'
 import MapLocationExample from './mydemo/MapLocationExample'
 
 const MainApp = StackNavigator({
-    // CountAppSource: {screen: CountAppSource},
     App: {screen: App},
     aamp3d: {screen: aamp3d},
     MapLocationExample: {screen: MapLocationExample},
@@ -46,6 +45,7 @@ const MainApp = StackNavigator({
     Switch: {screen: Switch},
     ARTTest: {screen: ARTTest},
     ChartExample: {screen: ChartExample},
+    CountAppSource: {screen: CountAppSource},
 })
 
 
