@@ -36,6 +36,11 @@ export default class App extends React.Component {
                     sourceClass: 'StylesTest',
                 },
                 {
+                    key: 'MapLocationExample',
+                    title: 'Go to MapLocationExample',
+                    sourceClass: 'MapLocationExample',
+                },
+                {
                     key: 'aamp3d',
                     title: 'Go to aamp3d',
                     sourceClass: 'aamp3d',
@@ -163,7 +168,7 @@ export default class App extends React.Component {
                 <FlatList
                     data={this.state.data}
                     ItemSeparatorComponent={ItemDivideComponent}
-                    keyExtractor = {this._keyExtractor}
+                    keyExtractor={this._keyExtractor}
                     // extraData={this.state}
                     renderItem={({item}) => <Text style={{textAlign: 'center', padding: 5}}
                                                   onPress={() => navigate(item.sourceClass)}>{item.title}</Text>}

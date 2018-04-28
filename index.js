@@ -16,19 +16,21 @@ import WebSocketTest from './base/WebSocketTest'
 import MainScreen from './base/ReactNavigationTest'
 import Picker from './widget/Picker'
 import Switch from './widget/Switch'
-import CountApp from './CountApp'
-import CountAppSource from './CountAppSource'
+import CountApp from './mydemo/CountApp'
+import CountAppSource from './mydemo/CountAppSource'
 import ARTTest from './base/ARTTest'
 import NativeProps from './base/NativeProps'
 import ChartExample from './chart/ChartExample'
 import PieChartScreen from './chart/PieChartScreen';
 import MyPieChart from './chart/MyPieChart';
 import aamp3d from './aamp3d/index'
+import MapLocationExample from './mydemo/MapLocationExample'
 
 const MainApp = StackNavigator({
     // CountAppSource: {screen: CountAppSource},
     App: {screen: App},
     aamp3d: {screen: aamp3d},
+    MapLocationExample: {screen: MapLocationExample},
     StylesTest: {screen: StylesTest},
     TextInputTest: {screen: TextInputTest},
     FlexBox: {screen: FlexBox},

@@ -7,7 +7,7 @@ import {
     Text,
     ART,
 } from 'react-native'
-import Sector from './widget/Sector'
+import Sector from '../widget/Sector'
 
 const {Surface, Group} = ART
 
