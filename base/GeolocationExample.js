@@ -7,6 +7,9 @@ import {
 
 /* react native 定位*/
 export default class GeolocationExample extends Component {
+    static navigationOptions={
+        title:'官方定位'
+    }
     constructor(props) {
         super(props)
         this.state = {
@@ -19,11 +22,15 @@ export default class GeolocationExample extends Component {
 
     componentDidMount() {
         navigator.geolocation.getCurrentPosition(
-            (initialPosition) => this.setState({initialPosition}),
+            (initialPosition) => {
+                console.debug('initialPosition', initialPosition)
+                this.setState({initialPosition})
+            },
             (error) => alert(error.message),
-            {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+            {enableHighAccuracy: true, timeout: 10000, maximumAge: 1000}
         );
         this.state.watchID = navigator.geolocation.watchPosition((lastPosition) => {
+            console.debug(lastPosition)
             this.setState({lastPosition});
         });
     }
