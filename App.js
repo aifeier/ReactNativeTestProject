@@ -20,6 +20,8 @@ import ViewExample from './native_view/ViewExample'
 import ARTTest from "./base/ARTTest";
 import ChartExample from "./chart/ChartExample";
 
+import AAmpUtils from './native_modules/AAmpUtils.android'
+
 type Props = {};
 export default class App extends React.Component {
     static navigationOptions = {
@@ -28,6 +30,9 @@ export default class App extends React.Component {
 
     constructor(props) {
         super(props)
+        AAmpUtils.LatLngConverterTOAAmp(30.278973333333337, 120.14591166666666, (latlng) => {
+            console.log(latlng.latitude, latlng.longitude)
+        })
         this.state = {
             data: [
                 {
