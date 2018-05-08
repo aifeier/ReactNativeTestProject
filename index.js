@@ -25,10 +25,12 @@ import PieChartScreen from './chart/PieChartScreen';
 import MyPieChart from './chart/MyPieChart';
 import aamp3d from './aamp3d/index'
 import MapLocationExample from './mydemo/MapLocationExample'
+import GeolocationExample from './base/GeolocationExample'
 
 const MainApp = StackNavigator({
     App: {screen: App},
     aamp3d: {screen: aamp3d},
+    GeolocationExample: {screen: GeolocationExample},
     MapLocationExample: {screen: MapLocationExample},
     StylesTest: {screen: StylesTest},
     TextInputTest: {screen: TextInputTest},

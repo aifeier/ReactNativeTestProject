@@ -7,6 +7,8 @@ import com.facebook.react.uimanager.ViewManager;
 import com.testproject.nativemodule.CallBackExample;
 import com.testproject.nativemodule.ImagePickerModule;
 import com.testproject.nativemodule.ToastModule;
+import com.testproject.viewmanagers.AAmpUtils;
+import com.testproject.viewmanagers.NetWorkUtils;
 import com.testproject.viewmanagers.ViewExampleManager;
 
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ public class MyReactPackage implements ReactPackage {
         modules.add(new ToastModule(reactContext));
         modules.add(new CallBackExample(reactContext));
         modules.add(new ImagePickerModule(reactContext));
+        modules.add(new AAmpUtils(reactContext));
+        modules.add(new NetWorkUtils(reactContext));
         return modules;
     }
 

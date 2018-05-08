@@ -41,6 +41,11 @@ export default class App extends React.Component {
                     sourceClass: 'MapLocationExample',
                 },
                 {
+                    key: 'GeolocationExample',
+                    title: 'Go to GeolocationExample',
+                    sourceClass: 'GeolocationExample',
+                },
+                {
                     key: 'CountAppSource',
                     title: 'Go to CountAppSource',
                     sourceClass: 'CountAppSource',
