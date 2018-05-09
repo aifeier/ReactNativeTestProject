@@ -41,6 +41,11 @@ export default class App extends React.Component {
                     sourceClass: 'StylesTest',
                 },
                 {
+                    key: 'CallBackA',
+                    title: 'Go to CallBack Example',
+                    sourceClass: 'CallBackA',
+                },
+                {
                     key: 'MapLocationExample',
                     title: 'Go to MapLocationExample',
                     sourceClass: 'MapLocationExample',
@@ -132,7 +137,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        const {navigate} = this.props.navigation;
+        const {navigate,push} = this.props.navigation;
         console.log('android' === Platform.OS)
         ToastExample.show('测试Toast', ToastExample.SHORT);
         CallBackExample.measureLayout(
@@ -186,7 +191,7 @@ export default class App extends React.Component {
                     keyExtractor={this._keyExtractor}
                     // extraData={this.state}
                     renderItem={({item}) => <Text style={{textAlign: 'center', padding: 5}}
-                                                  onPress={() => navigate(item.sourceClass)}>{item.title}</Text>}
+                                                  onPress={() => push(item.sourceClass)}>{item.title}</Text>}
                 />
             </ScrollView>
         )

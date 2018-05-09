@@ -26,10 +26,14 @@ import MyPieChart from './chart/MyPieChart';
 import aamp3d from './aamp3d/index'
 import MapLocationExample from './mydemo/MapLocationExample'
 import GeolocationExample from './base/GeolocationExample'
+import CallBackA from './mydemo/CallBackA'
+import CallBackB from './mydemo/CallBackB'
 
 const MainApp = StackNavigator({
     App: {screen: App},
     aamp3d: {screen: aamp3d},
+    CallBackA: {screen: CallBackA},
+    CallBackB: {screen: CallBackB},
     GeolocationExample: {screen: GeolocationExample},
     MapLocationExample: {screen: MapLocationExample},
     StylesTest: {screen: StylesTest},
@@ -57,6 +61,8 @@ AppRegistry.registerComponent('MainApp', () => MainApp);
 // AppRegistry.registerComponent('MainApp', () => ARTTest);
 // AppRegistry.registerComponent('MainApp', () => NativeProps);
 AppRegistry.registerComponent('App', () => App);
+AppRegistry.registerComponent('CallBackA', () => CallBackA);
+AppRegistry.registerComponent('CallBackB', () => CallBackB);
 AppRegistry.registerComponent('MainScreen', () => MainScreen);
 AppRegistry.registerComponent('helloWorldApp', () => helloWorldApp);
 AppRegistry.registerComponent('StylesTest', () => StylesTest);
