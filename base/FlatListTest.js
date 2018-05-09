@@ -1,21 +1,39 @@
-import React, {
-    Component
-} from 'react';
-import {
-    FlatList,
-    Text
-} from 'react-native';
+import React, {Component} from 'react';
+import {FlatList, Image, View,} from 'react-native';
 
 export default class FlatListText extends Component {
     static navigationOptions = {
         title: 'FlatListText',
     }
+
+    state = {
+        data: [
+            {img: 'http://img.zcool.cn/community/01058a556895750000012716d39e4e.jpg@3000w_1l_2o_100sh.jpg'},
+            {img: 'http://img.zcool.cn/community/01e7d3591a7392b5b3086ed49a3358.jpg'},
+            {img: 'https://up.enterdesk.com/edpic_source/63/6a/4e/636a4ecd6798a6382376ec8515378065.jpg'},
+            {img: 'http://pic.yesky.com/uploadImages/2017/049/22/PJ56F1DL4KX1.jpg'},
+            {img: 'http://pic1.win4000.com/wallpaper/e/53d9b5d3ac578.jpg'},
+            {img: 'http://image.tianjimedia.com/uploadImages/2017/049/32/V8DH14EZ5FR0.jpg'},
+            {img: 'http://pic.yesky.com/uploadImages/2017/049/25/6H7V764P6L0Z.jpg'},
+            {img: 'http://pic.yesky.com/uploadImages/2017/049/39/2575Y4J0O175.jpg'},
+        ]
+    }
+    //把data中数组的下标作为了唯一的key
+    _keyExtractor = (item, index) => index + '';
+
     render() {
         return (
-            <FlatList
-                data={[{key: 'a'}, {key: 'b'}, {key: 'c'}, {key: 'd'},]}
-                renderItem={({item}) => <Text>{item.key}</Text>}
-            />
+            <View>
+                <FlatList
+                    data={this.state.data}
+                    keyExtractor={this._keyExtractor}
+                    renderItem={({item}) => <View >
+                        < Image style={{height: 200}}
+                                resizeMode='contain'
+                                source={{uri: item.img}}/>
+                    </View>}
+                />
+            </View>
         )
     }
 }
